@@ -19,7 +19,7 @@ votes_per_candidate = []
 # Change directory to the directory of current python script
 os.chdir(os.path.dirname(__file__))
 
-# create a path to read CSV file
+# create path to read CSV file
 election_data = os.path.join("..","Resources", "/Users/salitasantiago/python-challenge/PyPoll/Resources/election_data.csv")
 # Open & read csv file
 with open(election_data) as csvfile:
@@ -27,7 +27,7 @@ with open(election_data) as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
     print(csv_reader)
 
-    # Read the header row first
+    # Read header row first
     csv_header = next(csv_reader)
 
     # Loop each row of data after the header
@@ -35,7 +35,7 @@ with open(election_data) as csvfile:
 
         voters_candidates.append(row[2])
 
-    # Sort the list by default ascending order
+    # Sort list by ascending order
     sorted_list = sorted(voters_candidates)
 
     # Arrange the sorted list by most common outcomes
