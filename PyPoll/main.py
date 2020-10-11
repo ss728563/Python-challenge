@@ -69,7 +69,7 @@ print("------------------------------")
 
 
 # Export text file with results
-election_file = os.path.join("Output", "/Users/salitasantiago/python-challenge/PyPoll/Analysis/election_data.txt")
+election_file = os.path.join("Analysis", "/Users/salitasantiago/python-challenge/PyPoll/Analysis/election_data.txt")
 with open(election_file, "w") as outfile:
 
     outfile.write("Election Results\n")
