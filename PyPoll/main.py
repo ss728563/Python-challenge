@@ -6,7 +6,7 @@
 #  The winner of the election based on popular vote
 
 
-# Import modules. os for path, csv for file
+# Import modules- os for path, csv for file, collections to counter
 import os
 import csv
 import collections
