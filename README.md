@@ -7,7 +7,7 @@ Python Challenge
 
 
 
-For PyBank, we are tasked with creating a Python script for analyzing the financial records of your company.
+For PyBank, we are tasked with creating a Python script for analyzing the financial records of the company.
 
 
 
