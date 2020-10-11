@@ -45,7 +45,7 @@ with open(election_data) as csvfile:
     count_candidate = Counter (arrange_list) 
     votes_per_candidate.append(count_candidate.most_common())
 
-    # Calculate the percentage of votes per candidate by 3 decimals
+    # Calculate the % of votes per candidate by 3 decimals
     for item in votes_per_candidate:
        
         first = format((item[0][1])*100/(sum(count_candidate.values())),'.3f')
@@ -68,7 +68,7 @@ print(f"Winner:  {votes_per_candidate[0][0][0]}")
 print("------------------------------")
 
 
-# Export text file with results
+# Export text file w results
 election_file = os.path.join("Analysis", "/Users/salitasantiago/python-challenge/PyPoll/Analysis/election_data.txt")
 with open(election_file, "w") as outfile:
 
