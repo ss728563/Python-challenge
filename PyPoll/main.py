@@ -30,8 +30,6 @@ with open(election_data) as csvfile:
     # Read the header row first
     csv_header = next(csv_reader)
 
-    #print(f"Header: {csv_header}")
-    # This prints -->> Header: Voter ID,Country,Candidate
     # Loop each row of data after the header
     for row in csv_reader:
 
@@ -40,19 +38,14 @@ with open(election_data) as csvfile:
     # Sort the list by default ascending order
     sorted_list = sorted(voters_candidates)
 
-    #sorted_list = sorted(voters_candidates, reverse=True) 
-    #sorted_list.sort(reverse=True) 
-
-    #for key, group in groupby(sorted_list):
-    
     # Arrange the sorted list by most common outcomes
     arrange_list = sorted_list
 
-    #count votes per candidate in most common outcome order and append to a list
+    # Count votes per candidate in most common outcome order & append to a list
     count_candidate = Counter (arrange_list) 
     votes_per_candidate.append(count_candidate.most_common())
 
-    # calculate the percentage of votes per candicate in 3 digital points
+    # Calculate the percentage of votes per candidate by 3 decimals
     for item in votes_per_candidate:
        
         first = format((item[0][1])*100/(sum(count_candidate.values())),'.3f')
@@ -60,27 +53,23 @@ with open(election_data) as csvfile:
         third = format((item[2][1])*100/(sum(count_candidate.values())),'.3f')
         fourth = format((item[3][1])*100/(sum(count_candidate.values())),'.3f')
           
-    #print(c.most_common())
-    #print(c.values())
-    #print(c.keys())
-    #print(sum(c.values()))
     
-# Print the analysis to the terminal
+# Print analysis to terminal
 print("Election Results")
-print("-------------------------")
+print("------------------------------")
 print(f"Total Votes:  {sum(count_candidate.values())}")
-print("-------------------------")
+print("------------------------------")
 print(f"{votes_per_candidate[0][0][0]}: {first}% ({votes_per_candidate[0][0][1]})")
 print(f"{votes_per_candidate[0][1][0]}: {second}% ({votes_per_candidate[0][1][1]})")
 print(f"{votes_per_candidate[0][2][0]}: {third}% ({votes_per_candidate[0][2][1]})")
 print(f"{votes_per_candidate[0][3][0]}: {fourth}% ({votes_per_candidate[0][3][1]})")
-print("-------------------------")
+print("------------------------------")
 print(f"Winner:  {votes_per_candidate[0][0][0]}")
-print("-------------------------")
+print("------------------------------")
 
 
-# Export a text file with the results
-election_file = os.path.join("Output", "/Users/salitasantiago/python-challenge/PyPoll/Resources/election_data.cvs")
+# Export text file with results
+election_file = os.path.join("Output", "/Users/salitasantiago/python-challenge/PyPoll/Analysis/election_data.txt")
 with open(election_file, "w") as outfile:
 
     outfile.write("Election Results\n")
