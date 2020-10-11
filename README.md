@@ -16,4 +16,4 @@ For PyBank, we are tasked with creating a Python script for analyzing the financ
 
 
 
-For PyPoll, we are tasked with helping a small, rural town modernize its vote counting process.
+For PyPoll, we are tasked with helping a small, rural town modernize its vote counting process!
